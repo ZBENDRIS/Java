@@ -13,5 +13,9 @@
     </head>
     <body>
         <%@include file="WEB-INF/Header.jsp" %>
+        <jsp:include page="${requestScope.contenu}" />
+        <%@include file="WEB-INF/Footer.jsp" %>
+        
+        
     </body>
 </html>

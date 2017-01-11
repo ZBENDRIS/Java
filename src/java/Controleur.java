@@ -35,8 +35,11 @@ public class Controleur extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
            if (request.getParameterMap().containsKey("marque") && request.getParameterMap().containsKey("quantite")){
+               request.setAttribute("contenu", "Cgu.jsp");
                RequestDispatcher rd = request.getRequestDispatcher("Template.jsp");
                rd.forward(request, response);
+               
+               
                
            }else if ("cgu".equals(request.getParameter("action"))){
                RequestDispatcher rd = request.getRequestDispatcher("Cgu.jsp");
