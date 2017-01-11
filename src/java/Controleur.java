@@ -35,7 +35,7 @@ public class Controleur extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
            if (request.getParameterMap().containsKey("marque") && request.getParameterMap().containsKey("quantite")){
-               RequestDispatcher rd = request.getRequestDispatcher("Panier.jsp");
+               RequestDispatcher rd = request.getRequestDispatcher("Template.jsp");
                rd.forward(request, response);
                
            }else if ("cgu".equals(request.getParameter("action"))){
