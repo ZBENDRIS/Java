@@ -8,10 +8,10 @@
 <header>
   <nav>
         <ul>
-            <li>Accueil</li>
-            <li>Catalogue</li>
-            <li>Connexion</li>
-            <li>Panier</li>
+            <li><a href="Controleur?action=Accueil">Accueil</a></li>
+            <li><a href="Controleur?action=Catalogue">Catalogue</a></li>
+            <li><a href="Controleur?action=Connexion">Connexion</a></li>
+            <li><a href="Controleur?action=Panier">Panier</a></li>
         </ul>
   </nav>
 </header>

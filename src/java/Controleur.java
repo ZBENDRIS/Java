@@ -41,17 +41,25 @@ public class Controleur extends HttpServlet {
                 RequestDispatcher rd = request.getRequestDispatcher("Template.jsp");
                 rd.forward(request, response);
             }
+            else if ("Panier".equals(request.getParameter("action"))){
+                request.setAttribute("contenu", "Panier.jsp");
+                request.setAttribute("title", "Panier");
+                RequestDispatcher rd = request.getRequestDispatcher("Template.jsp");
+                rd.forward(request, response);
+            }else if ("Catalogue".equals(request.getParameter("action"))){
+                request.setAttribute("contenu", "Catalogue.jsp");
+                request.setAttribute("title", "Panier");
+                RequestDispatcher rd = request.getRequestDispatcher("Template.jsp");
+                rd.forward(request, response);
+            }
             if (request.getParameterMap().containsKey("marque") && request.getParameterMap().containsKey("quantite")){
                request.setAttribute("contenu", "Accueil.jsp");
                request.setAttribute("title", "Accueil");
                RequestDispatcher rd = request.getRequestDispatcher("Template.jsp");
                rd.forward(request, response);
                 
-           }else if ("cgu".equals(request.getParameter("action"))){
+           }else if ("Cgu".equals(request.getParameter("action"))){
                RequestDispatcher rd = request.getRequestDispatcher("Cgu.jsp");
-               rd.forward(request, response);
-           }else if ("partenaires".equals(request.getParameter("action"))){
-               RequestDispatcher rd = request.getRequestDispatcher("Partenaires.jsp");
                rd.forward(request, response);
            }
         }
