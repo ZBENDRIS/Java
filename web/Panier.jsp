@@ -5,6 +5,20 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%int i;
+            Cookie[] cookies = request.getCookies();
+			for(i=0; i < cookies.length; i++) {
+				Cookie MonCookie = cookies[i];
+                                if("ram".equals(cookies[i].getName())){
+                                    pageContext.setAttribute("ram", cookies[i].getValue());
+                                }else if("cpu".equals(cookies[i].getName())){
+                                    pageContext.setAttribute("cpu", cookies[i].getValue());
+                                }else if("cg".equals(cookies[i].getName())){
+                                    pageContext.setAttribute("cg", cookies[i].getValue());
+                                }
+                                
+                        }
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,8 +26,8 @@
         <title>Panier</title>
     </head>
     <body>
-        <p>Carte graphique : ${param.cg}</p>
-        <p>Processeur : ${param.cpu}</p>
-        <p>RAM : ${param.ram} GB</p>
+        <p>Carte graphique : ${cg}</p>
+        <p>Processeur : ${cpu}</p>
+        <p>RAM :${ram} GB</p>
     </body>
 </html>
