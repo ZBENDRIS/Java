@@ -8,7 +8,10 @@
 <header>
   <nav>
         <ul>
-            <li>test</li>
+            <li>Accueil</li>
+            <li>Catalogue</li>
+            <li>Connexion</li>
+            <li>Panier</li>
         </ul>
   </nav>
 </header>

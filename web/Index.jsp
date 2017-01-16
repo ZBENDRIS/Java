@@ -7,5 +7,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
     <body>
-        <h1>Accueil du site à faire</h1>
+        <h1>Accueil</h1>
+        <h2>Bienvenue sur notre site d'e-commerce</h2>
     </body>

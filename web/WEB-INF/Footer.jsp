@@ -6,5 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <footer>
-    <p>footer</p>
+    <ul>
+            <li>Nous contacter</li>
+            <li>Conditions d'utilisations</li>
+    </ul>
 </footer>
