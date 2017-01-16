@@ -12,7 +12,8 @@
         <title>Panier</title>
     </head>
     <body>
-        <p>Article : ${param.marque}</p>
-        <p>Quantité : ${param.quantite}</p>
+        <p>Carte graphique : ${param.cg}</p>
+        <p>Processeur : ${param.cpu}</p>
+        <p>RAM : ${param.ram} GB</p>
     </body>
 </html>

@@ -47,8 +47,8 @@ public class Controleur extends HttpServlet {
                 RequestDispatcher rd = request.getRequestDispatcher("Template.jsp");
                 rd.forward(request, response);
             }else if ("Catalogue".equals(request.getParameter("action"))){
-                request.setAttribute("contenu", "Catalogue.jsp");
-                request.setAttribute("title", "Panier");
+                request.setAttribute("contenu", "ChoixArticles.jsp");
+                request.setAttribute("title", "Catalogue");
                 RequestDispatcher rd = request.getRequestDispatcher("Template.jsp");
                 rd.forward(request, response);
             }
