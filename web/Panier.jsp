@@ -17,12 +17,19 @@
                                     pageContext.setAttribute("cg", cookies[i].getValue());
                                 }
                                 
-                        }
+                        } 
+         
 %>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <% if("1".equals(request.getAttribute("refresh"))){
+            request.setAttribute("refresh", "0");
+            out.println("<meta http-equiv='refresh' content='0'>");
+        }
+        %>
         <title>Panier</title>
     </head>
     <body>
