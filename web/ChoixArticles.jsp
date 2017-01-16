@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <body>
         <h1>Choisissez vos articles</h1>
-        <form method="post" action="Panier.jsp">
+        <form method="post" action="Controleur?action=Panier">
         <label for="cg">Sélectionnez la marque de la carte graphique:</label><br/>
         <select name="cg" id="cg">
         <option value="nvidia">Nvidia</option>

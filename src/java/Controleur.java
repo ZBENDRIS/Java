@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -42,6 +43,14 @@ public class Controleur extends HttpServlet {
                 rd.forward(request, response);
             }
             else if ("Panier".equals(request.getParameter("action"))){
+                if(request.getParameter("cg")!=null){
+                    Cookie cg = new Cookie("cg", request.getParameter("cg"));
+                    response.addCookie(cg);
+                    Cookie cpu = new Cookie("cpu", request.getParameter("cpu"));
+                    response.addCookie(cpu);
+                    Cookie ram = new Cookie("ram", request.getParameter("ram"));
+                    response.addCookie(ram);
+                }
                 request.setAttribute("contenu", "Panier.jsp");
                 request.setAttribute("title", "Panier");
                 RequestDispatcher rd = request.getRequestDispatcher("Template.jsp");
