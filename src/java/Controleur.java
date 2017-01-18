@@ -50,11 +50,16 @@ public class Controleur extends HttpServlet {
                     response.addCookie(cpu);
                     Cookie ram = new Cookie("ram", request.getParameter("ram"));
                     response.addCookie(ram);
-                }
+                    request.setAttribute("contenu", "Redirection.jsp");
+                    request.setAttribute("title", "Redirection");
+                    RequestDispatcher rd = request.getRequestDispatcher("Template.jsp");
+                    rd.forward(request, response);
+                }else{
                 request.setAttribute("contenu", "Panier.jsp");
                 request.setAttribute("title", "Panier");
                 RequestDispatcher rd = request.getRequestDispatcher("Template.jsp");
                 rd.forward(request, response);
+                }
             }else if ("Catalogue".equals(request.getParameter("action"))){
                 request.setAttribute("contenu", "ChoixArticles.jsp");
                 request.setAttribute("title", "Catalogue");

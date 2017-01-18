@@ -8,5 +8,5 @@
 
 <body>
         <h1>Accueil</h1>
-        <h2>Bienvenue sur notre site d'e-commerce</h2>
+        <h2>Bienvenue sur notre site d'e-commerce de PC</h2>
 </body>
