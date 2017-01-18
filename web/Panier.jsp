@@ -10,29 +10,29 @@
             Cookie[] cookies = request.getCookies();
 			for(i=0; i < cookies.length; i++) {
 				Cookie MonCookie = cookies[i];
-                                if("ram".equals(cookies[i].getName())){
+                                if("ram".equals(MonCookie.getName())){
                                     pageContext.setAttribute("ram", cookies[i].getValue());
-                                    if("4".equals(cookies[i].getValue())){
+                                    if("4".equals(MonCookie.getValue())){
                                         prixRam=25;
-                                    } else if("8".equals(cookies[i].getValue())){
+                                    } else if("8".equals(MonCookie.getValue())){
                                         prixRam=50;
-                                    } else if("16".equals(cookies[i].getValue())){
+                                    } else if("16".equals(MonCookie.getValue())){
                                         prixRam=100;
                                     }
                                     pageContext.setAttribute("prixRam", prixRam);
-                                }else if("cpu".equals(cookies[i].getName())){
+                                }else if("cpu".equals(MonCookie.getName())){
                                     pageContext.setAttribute("cpu", cookies[i].getValue());
-                                    if("Intel".equals(cookies[i].getValue())){
+                                    if("Intel".equals(MonCookie.getValue())){
                                         prixCpu=500;
-                                    } else if("AMD".equals(cookies[i].getValue())){
+                                    } else if("AMD".equals(MonCookie.getValue())){
                                         prixCpu=250;
                                     }
                                     pageContext.setAttribute("prixCpu", prixCpu);
-                                }else if("cg".equals(cookies[i].getName())){
+                                }else if("cg".equals(MonCookie.getName())){
                                     pageContext.setAttribute("cg", cookies[i].getValue());
-                                    if("Nvidia".equals(cookies[i].getValue())){
+                                    if("Nvidia".equals(MonCookie.getValue())){
                                         prixCg=500;
-                                    } else if("AMD".equals(cookies[i].getValue())){
+                                    } else if("AMD".equals(MonCookie.getValue())){
                                         prixCg=250;
                                     }
                                     pageContext.setAttribute("prixCg", prixCg);

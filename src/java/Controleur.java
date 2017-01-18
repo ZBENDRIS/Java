@@ -37,8 +37,13 @@ public class Controleur extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
           
             if ("Accueil".equals(request.getParameter("action"))){
+                
                 request.setAttribute("contenu", "Accueil.jsp");
                 request.setAttribute("title", "Accueil");
+                if(request.getParameter("Id")!=null){
+                Cookie Id = new Cookie("Id", request.getParameter("Id"));
+                response.addCookie(Id);
+                }
                 RequestDispatcher rd = request.getRequestDispatcher("Template.jsp");
                 rd.forward(request, response);
             }
@@ -65,13 +70,26 @@ public class Controleur extends HttpServlet {
                 request.setAttribute("title", "Catalogue");
                 RequestDispatcher rd = request.getRequestDispatcher("Template.jsp");
                 rd.forward(request, response);
-            }
-            if (request.getParameterMap().containsKey("marque") && request.getParameterMap().containsKey("quantite")){
-               request.setAttribute("contenu", "Accueil.jsp");
-               request.setAttribute("title", "Accueil");
-               RequestDispatcher rd = request.getRequestDispatcher("Template.jsp");
-               rd.forward(request, response);
-                
+            }else if ("Connexion".equals(request.getParameter("action"))){
+                request.setAttribute("contenu", "Connexion.jsp");
+                request.setAttribute("title", "Connexion");
+                RequestDispatcher rd = request.getRequestDispatcher("Template.jsp");
+                rd.forward(request, response);
+            }else if ("Deconnexion".equals(request.getParameter("action"))){
+                request.setAttribute("contenu", "Deconnexion.jsp");
+                request.setAttribute("title", "Deconnexion");
+                int i;
+                Cookie[] cookies = request.getCookies();
+                for(i=0; i < cookies.length; i++) {
+                    Cookie MonCookie = cookies[i];
+                    if("Id".equals(MonCookie.getName())){
+                        MonCookie.setMaxAge(0);
+                        MonCookie.setValue("");
+                        response.addCookie(MonCookie);
+                    }
+                }
+                RequestDispatcher rd = request.getRequestDispatcher("Template.jsp");
+                rd.forward(request, response);   
            }else if ("Cgu".equals(request.getParameter("action"))){
                RequestDispatcher rd = request.getRequestDispatcher("Cgu.jsp");
                rd.forward(request, response);
